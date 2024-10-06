@@ -1,0 +1,33 @@
+# 1. Batch Gradient Descent without Regularization
+weights_batch = gradient_descent(X_train, y_train)
+y_valid_pred_batch = predict_function(X_valid, weights_batch)
+mse_valid_batch = mean_squared_error(Y_valid, y_valid_pred_batch)
+y_test_pred_batch = predict_function(X_test, weights_batch)
+mse_test_batch = mean_squared_error(y_test, y_test_pred_batch)
+
+# 2. Mini-Batch Gradient Descent without Regularization
+weights_mini_batch = mini_batch_gradient_descent(X_train, y_train)
+y_valid_pred_mini_batch = predict_function(X_valid, weights_mini_batch)
+mse_valid_mini_batch = mean_squared_error(Y_valid, y_valid_pred_mini_batch)
+y_test_pred_mini_batch = predict_function(X_test, weights_mini_batch)
+mse_test_mini_batch = mean_squared_error(y_test, y_test_pred_mini_batch)
+
+# 3. Mini-Batch Gradient Descent with L1 Regularization
+weights_mini_batch_l1 = mini_batch_gradient_descent_l1(X_train, y_train, alpha=best_alpha_l1)
+y_valid_pred_mini_batch_l1 = predict_function(X_valid, weights_mini_batch_l1)
+mse_valid_mini_batch_l1 = mean_squared_error(Y_valid, y_valid_pred_mini_batch_l1)
+y_test_pred_mini_batch_l1 = predict_function(X_test, weights_mini_batch_l1)
+mse_test_mini_batch_l1 = mean_squared_error(y_test, y_test_pred_mini_batch_l1)
+
+# 4. Mini-Batch Gradient Descent with L2 Regularization
+weights_mini_batch_l2 = mini_batch_gradient_descent_l2(X_train, y_train, alpha=best_alpha_l2)
+y_valid_pred_mini_batch_l2 = predict_function(X_valid, weights_mini_batch_l2)
+mse_valid_mini_batch_l2 = mean_squared_error(Y_valid, y_valid_pred_mini_batch_l2)
+y_test_pred_mini_batch_l2 = predict_function(X_test, weights_mini_batch_l2)
+mse_test_mini_batch_l2 = mean_squared_error(y_test, y_test_pred_mini_batch_l2)
+
+# Printing all MSEs
+print(f"Batch Gradient Descent (No Regularization): Validation MSE = {mse_valid_batch}, Test MSE = {mse_test_batch}")
+print(f"Mini-Batch Gradient Descent (No Regularization): Validation MSE = {mse_valid_mini_batch}, Test MSE = {mse_test_mini_batch}")
+print(f"Mini-Batch Gradient Descent (L1 Regularization): Validation MSE = {mse_valid_mini_batch_l1}, Test MSE = {mse_test_mini_batch_l1}")
+print(f"Mini-Batch Gradient Descent (L2 Regularization): Validation MSE = {mse_valid_mini_batch_l2}, Test MSE = {mse_test_mini_batch_l2}")
