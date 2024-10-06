@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .profile-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 480px) {
+            .profile-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .download-btn {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <h1>User Profile</h1>
+
+        <p><span class="label">Username:</span> {{ user[1] }}</p>
+        <p><span class="label">First Name:</span> {{ user[3] }}</p>
+        <p><span class="label">Last Name:</span> {{ user[4] }}</p>
+        <p><span class="label">Email:</span> {{ user[5] }}</p>
+
+        <!-- Display the word count from the uploaded file -->
+        <p><span class="label">Word Count in Uploaded File:</span> {{ user[6] }}</p>
+
+        <!-- Provide a link to download the uploaded file -->
+        <a href="/uploads/{{ user[7] }}" class="download-btn" download>Download {{ user[7] }}</a>
+    </div>
+
+</body>
+</html>
